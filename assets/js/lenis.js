@@ -9,6 +9,8 @@ export default function initLenis() {
     infinite: false,
   });
 
+  window.__lenis = lenis;
+
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);

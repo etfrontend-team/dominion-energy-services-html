@@ -192,6 +192,11 @@ const initAnimations = () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  // Sync Lenis virtual scroll with ScrollTrigger so it doesn't add phantom body height
+  if (window.__lenis) {
+    window.__lenis.on('scroll', ScrollTrigger.update);
+  }
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   // ══ 1. PARALLAX IMAGES ══════════════════════════════
@@ -256,24 +261,33 @@ const initAnimations = () => {
     );
   }
 
-  // ══ 3. SECTION HEADING REVEALS ══════════════════════
+  // ══ 3. SECTION CONTENT STAGGER (each block triggers on its own position) ══
 
-  document.querySelectorAll('section h2, section h1').forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 32 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.9,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-          once: true,
-        },
-      }
-    );
+  const EXPAND = new Set(['what-we-do-grid', 'what-we-do-details', 'energy-offering-grid', 'technical-expertise-cards', 'market-cards']);
+
+  const setupAnim = (el) => {
+    const inExpand = [...el.classList].some((c) => EXPAND.has(c));
+    if (!inExpand) {
+      gsap.set(el, { opacity: 0, y: 50 });
+      gsap.to(el, { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      return;
+    }
+    const children = [...el.children];
+    const allLeaf = children.every((c) => ![...c.classList].some((cls) => EXPAND.has(cls)));
+    if (allLeaf) {
+      gsap.set(children, { opacity: 0, y: 50 });
+      gsap.to(children, { opacity: 1, y: 0, duration: 0.85, stagger: 0.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+    } else {
+      children.forEach(setupAnim);
+    }
+  };
+
+  gsap.utils.toArray('main section').forEach((s) => {
+    const wrap = s.querySelector(':scope > div');
+    if (!wrap) return;
+    const direct = Array.from(wrap.children);
+    const base = direct.length > 1 ? direct : direct[0] ? Array.from(direct[0].children) : [];
+    base.forEach(setupAnim);
   });
 
   // ══ 4. COUNTER ANIMATION ════════════════════════════

@@ -8,8 +8,8 @@ import initAnimations from './animations.js';
 document.addEventListener('DOMContentLoaded', function () {
   initLenis();
   initHeader();
+  initAnimations();
   initCounter();
   initCharts();
   initTestimonials();
-  initAnimations();
 });

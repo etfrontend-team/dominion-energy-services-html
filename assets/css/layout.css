@@ -362,40 +362,11 @@ footer {
   @apply flex flex-col;
 }
 
-/* ── Map ── */
-.footer-map {
-  @apply max-768:h-350 relative h-540 w-full overflow-hidden;
+/* ── Copyright ── */
+.footer-copyright {
+  @apply flex items-center justify-center bg-[#eeeeee] px-24 py-20;
 }
 
-.footer-map-iframe {
-  @apply block h-full w-full border-0;
-}
-
-/* ── Footer bar ── */
-.footer-bar {
-  @apply max-1199:px-40 max-768:px-24 max-768:py-32 flex items-center justify-center bg-[#eeeeee] px-60 py-40;
-}
-
-.footer-bar-inner {
-  @apply max-768:flex-col max-768:gap-24 flex w-full items-start justify-between gap-40;
-}
-
-.footer-bar-col {
-  @apply flex flex-col gap-10;
-}
-
-.footer-bar-title {
-  @apply font-outfit text-30 max-1199:text-heading-5 max-768:text-22 text-ink leading-normal font-semibold;
-}
-
-.footer-bar-sub {
-  @apply font-dm-sans text-16 max-768:text-14 text-ink leading-24 font-normal no-underline;
-}
-
-.footer-bar-link {
-  transition: opacity 150ms ease;
-}
-
-.footer-bar-link:hover {
-  @apply opacity-70;
+.footer-copyright p {
+  @apply font-dm-sans text-14 text-center text-ink;
 }

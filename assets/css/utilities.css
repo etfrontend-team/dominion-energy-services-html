@@ -5,7 +5,7 @@
 /* ══ BANNER SECTION ══════════════════════════════ */
 
 .banner-section {
-  @apply max-1199:px-40 max-1199:pt-50 max-1199:pb-80 max-768:px-24 max-768:pt-40 max-768:pb-40 max-425:gap-36 max-425:pb-30 relative flex flex-col items-start gap-50 overflow-hidden bg-[#f7f9fc] px-60 pt-60 pb-100;
+  @apply max-1300:px-40 max-1300:pt-50 max-1300:pb-80 max-768:px-24 max-768:pt-40 max-768:pb-40 max-425:px-16 max-425:gap-36 max-425:pb-30 relative flex flex-col items-start gap-50 overflow-hidden bg-[#f7f9fc] 1440:px-33 px-20 pt-60 pb-100;
 }
 
 .banner-pattern-left {
@@ -582,7 +582,7 @@
 }
 
 .testimonials-intro {
-  @apply flex max-w-723 flex-col gap-20;
+  @apply flex max-w-723 flex-col gap-20 text-center mx-auto items-center;
 }
 
 .testimonials-title h2 {
@@ -977,11 +977,11 @@
 }
 
 .get-in-touch-cols {
-  @apply max-1024:flex-col flex w-full max-w-1320 items-stretch;
+  @apply max-1024:flex-col flex w-full gap-40 items-center;
 }
 
 .get-in-touch-col-left {
-  @apply max-1024:border-r-0 max-1024:border-b max-1024:pr-0 max-1024:pb-40 flex min-w-0 flex-1 flex-col gap-20 border-r pr-61;
+  @apply max-1024:w-full max-1024:border-r-0 max-1024:border-b max-1024:pr-0 max-1024:pb-40 flex min-w-0 flex-1 flex-col gap-20 border-r pr-40;
   border-color: rgba(255, 255, 255, 0.63);
 }
 
@@ -990,21 +990,29 @@
   color: rgba(255, 255, 255, 0.77);
 }
 
-.get-in-touch-phone {
-  @apply font-dm-sans text-28 max-768:text-heading-4 font-bold text-white no-underline;
-  transition: opacity 150ms ease;
-}
-
-.get-in-touch-phone:hover {
-  @apply opacity-80;
-}
-
 .get-in-touch-contact-list ul {
-  @apply m-0 flex list-none flex-col gap-8 p-0;
+  @apply m-0 flex list-none flex-col gap-14 p-0;
 }
 
 .get-in-touch-contact-list li {
-  @apply font-dm-sans text-16 max-768:text-14 leading-24 text-white;
+  @apply font-dm-sans text-16 max-768:text-14 leading-24 text-white flex items-center gap-12;
+}
+
+.get-in-touch-contact-list li svg {
+  @apply shrink-0;
+}
+
+.get-in-touch-contact-list li img {
+  @apply w-18 h-18 shrink-0;
+}
+
+.get-in-touch-contact-list li a {
+  @apply text-white no-underline;
+  transition: opacity 150ms ease;
+}
+
+.get-in-touch-contact-list li a:hover {
+  @apply opacity-80;
 }
 
 .get-in-touch-email {
@@ -1016,45 +1024,54 @@
   @apply opacity-80;
 }
 
-.get-in-touch-col-right {
-  @apply max-1024:pl-0 max-1024:pt-40 flex min-w-0 flex-1 flex-col justify-center gap-30 self-stretch pl-60;
+.get-in-touch-social {
+  @apply flex items-center gap-12;
 }
 
-.get-in-touch-social-row {
-  @apply max-576:flex-col max-576:items-start max-576:gap-20 flex items-center;
-}
-
-.get-in-touch-social-item {
-  @apply max-576:w-full flex w-290 items-center;
-}
-
-.get-in-touch-social-icon {
-  @apply text-brand-navy mr-15 flex shrink-0 items-center justify-center bg-white;
-  width: 54px;
-  height: 54px;
-  border-radius: 27px;
+.get-in-touch-social-btn {
+  @apply flex h-40 w-40 shrink-0 items-center justify-center rounded-full bg-white no-underline;
   transition: opacity 150ms ease;
 }
 
-.get-in-touch-social-icon:hover {
+.get-in-touch-social-btn:hover {
   @apply opacity-80;
 }
 
-.get-in-touch-social-label {
-  @apply font-dm-sans text-18 font-medium text-white;
+.get-in-touch-col-right {
+  @apply max-1024:w-full rounded-20 max-768:p-24 flex min-w-0 flex-1 flex-col bg-white p-40;
 }
 
-.get-in-touch-hours {
-  @apply flex w-full items-center pb-8;
+.get-in-touch-form {
+  @apply flex flex-col gap-14;
 }
 
-.get-in-touch-hours-text {
-  @apply font-dm-sans text-18 shrink-0 font-medium whitespace-nowrap text-white;
+.get-in-touch-form-row {
+  @apply max-576:flex-col flex gap-14;
 }
 
-.get-in-touch-hours-line {
-  @apply max-768:mx-24 mx-51 h-px flex-1;
-  background: white;
+.get-in-touch-form-row .get-in-touch-form-field {
+  @apply flex-1;
+}
+
+.get-in-touch-form-field {
+  @apply flex flex-col;
+}
+
+.get-in-touch-form-field input {
+  @apply rounded-8 font-dm-sans text-15 w-full border border-[#e2e8f0] bg-[#f8fafc] px-16 py-12 text-[#1e293b] outline-none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.get-in-touch-form-field textarea {
+  @apply rounded-8 font-dm-sans text-15 w-full resize-none border border-[#e2e8f0] bg-[#f8fafc] px-16 py-12 text-[#1e293b] outline-none;
+  min-height: 120px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.get-in-touch-form-field input:focus,
+.get-in-touch-form-field textarea:focus {
+  @apply border-brand-navy;
+  box-shadow: 0 0 0 3px rgba(56, 72, 146, 0.12);
 }
 
 /* ══ GENERAL HELPERS ═════════════════════════════ */
