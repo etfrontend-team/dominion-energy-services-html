@@ -1,0 +1,6 @@
+/node_modules
+.serena
+.claude
+package-lock.json
+**/.DS_Store
+.vscode

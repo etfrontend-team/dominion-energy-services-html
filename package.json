@@ -1,0 +1,47 @@
+{
+  "name": "html-setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i ./assets/css/app.css -o ./dist/style.css --watch",
+    "lint:fix": "npx eslint . --fix && npx prettier --write .",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etfrontend-team/html-setup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etfrontend-team/html-setup/issues"
+  },
+  "homepage": "https://github.com/etfrontend-team/html-setup#readme",
+  "description": "",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html}": [
+      "eslint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,html,css}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.2.0",
+    "@html-eslint/eslint-plugin": "^0.60.0",
+    "@html-eslint/parser": "^0.60.0",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0"
+  }
+}

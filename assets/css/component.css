@@ -1,0 +1,196 @@
+/* General section container */
+.container-fluid {
+  @apply max-1440:px-60 max-1199:px-40 max-768:px-24 max-425:px-16 mx-auto w-full max-w-1920 px-80;
+}
+
+/* Medium — header bars, tighter sections */
+.container-md {
+  @apply max-1199:px-40 max-768:px-24 max-425:px-16 mx-auto w-full max-w-1920 px-60;
+}
+
+/* Narrow inner section container */
+.container-sm {
+  @apply max-1440:px-80 max-1199:px-60 max-768:px-40 max-425:px-24 mx-auto w-full max-w-1920 px-120;
+}
+
+/* ── Base Button ── */
+.btn {
+  @apply font-outfit text-18 relative z-1 inline-flex h-50 w-fit cursor-pointer items-center justify-center overflow-hidden rounded-full border border-solid px-23 leading-none font-semibold whitespace-nowrap;
+}
+
+/* ── Button Variants (color only) ── */
+.btn-orange {
+  @apply bg-crimson text-white;
+}
+
+.btn-orange::before {
+  content: '';
+  @apply bg-navy absolute top-0 right-0 -z-1 h-full w-0 delay-150 duration-300 ease-linear;
+}
+
+.btn-orange:hover::before {
+  @apply left-0 w-full;
+}
+
+.btn-outline-white {
+  @apply border-white/60 bg-transparent text-white;
+}
+
+.btn-outline-white::before {
+  content: '';
+  @apply absolute top-0 right-0 -z-1 h-full w-0 bg-white delay-150 duration-300 ease-linear;
+}
+
+.btn-outline-white:hover {
+  @apply text-navy;
+}
+
+.btn-outline-white:hover::before {
+  @apply left-0 w-full;
+}
+
+.btn-outline-orange {
+  @apply text-orange border-orange bg-transparent;
+}
+
+.btn-outline-orange::before {
+  content: '';
+  @apply bg-orange absolute top-0 right-0 -z-1 h-full w-0 delay-150 duration-300 ease-linear;
+}
+
+.btn-outline-orange:hover {
+  @apply text-white;
+}
+
+.btn-outline-orange:hover::before {
+  @apply left-0 w-full;
+}
+
+.btn-navy {
+  @apply bg-navy border-navy text-white;
+}
+
+.btn-navy::before {
+  content: '';
+  @apply bg-crimson absolute top-0 right-0 -z-1 h-full w-0 delay-150 duration-300 ease-linear;
+}
+
+.btn-navy:hover::before {
+  @apply left-0 w-full;
+}
+
+.btn-white {
+  @apply text-navy-dark border-white bg-white;
+}
+
+.btn-white::before {
+  content: '';
+  @apply bg-navy absolute top-0 right-0 -z-1 h-full w-0 delay-150 duration-300 ease-linear;
+}
+
+.btn-white:hover {
+  @apply text-white;
+}
+
+.btn-white:hover::before {
+  @apply left-0 w-full;
+}
+
+.btn-outline-dark {
+  @apply border-ink text-ink bg-transparent;
+}
+
+.btn-outline-dark::before {
+  content: '';
+  @apply bg-navy absolute top-0 right-0 -z-1 h-full w-0 delay-150 duration-300 ease-linear;
+}
+
+.btn-outline-dark:hover {
+  @apply text-white;
+}
+
+.btn-outline-dark:hover::before {
+  @apply left-0 w-full;
+}
+
+/* ── Form Fields ── */
+.form-label {
+  @apply text-12 text-gray-text mb-8 block font-semibold tracking-widest uppercase;
+}
+
+.form-input {
+  @apply text-15 text-gray-light placeholder:text-gray-text rounded-10 w-full border-[1.5px] border-white/10 bg-white/5 px-20 py-14 transition-all duration-200 outline-none;
+}
+
+.form-input:focus {
+  @apply border-orange;
+  box-shadow: 0 0 0 3px rgba(212, 98, 42, 0.12);
+}
+
+.form-textarea {
+  @apply text-15 text-gray-light placeholder:text-gray-text rounded-10 w-full resize-none border-[1.5px] border-white/10 bg-white/5 px-20 py-14 transition-all duration-200 outline-none;
+}
+
+.form-textarea:focus {
+  @apply border-orange;
+  box-shadow: 0 0 0 3px rgba(212, 98, 42, 0.12);
+}
+
+.form-select {
+  @apply text-15 text-gray-light rounded-10 w-full cursor-pointer border-[1.5px] border-white/10 bg-white/5 px-20 py-14 transition-all duration-200 outline-none;
+}
+
+.form-select:focus {
+  @apply border-orange;
+  box-shadow: 0 0 0 3px rgba(212, 98, 42, 0.12);
+}
+
+/* ── Service Cards ── */
+.service-card {
+  @apply rounded-20 max-768:p-28 border-t-orange cursor-default border-t-3 bg-white p-40 transition-all duration-300;
+  box-shadow: 0 2px 20px rgba(6, 15, 32, 0.05);
+}
+
+.service-card:hover {
+  @apply -translate-y-5;
+  box-shadow: 0 24px 64px rgba(6, 15, 32, 0.12);
+}
+
+.service-icon-wrap {
+  @apply rounded-14 text-orange border-orange/18 flex h-56 w-56 shrink-0 items-center justify-center border;
+  background: linear-gradient(135deg, rgba(212, 98, 42, 0.1) 0%, rgba(212, 98, 42, 0.05) 100%);
+}
+
+/* ── Tech Cards ── */
+.tech-card {
+  @apply rounded-20 max-768:p-24 bg-off-white border-gray-light relative overflow-hidden border p-32 transition-all duration-300;
+}
+
+.tech-card:hover {
+  @apply border-orange/22 -translate-y-4 bg-white;
+  box-shadow: 0 16px 48px rgba(6, 15, 32, 0.1);
+}
+
+.tech-icon-wrap {
+  @apply rounded-12 mb-20 flex h-52 w-52 items-center justify-center text-white;
+  background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-light) 100%);
+}
+
+/* ── Stat Card ── */
+.stat-item {
+  @apply text-center;
+}
+
+/* ── Badge / Tag ── */
+.badge {
+  @apply text-orange text-12 bg-orange/7 border-orange/22 mb-24 inline-flex items-center gap-8 rounded-full border px-16 py-8 font-semibold tracking-[0.12em] uppercase;
+}
+
+/* ── Section Heading Block ── */
+.section-heading {
+  @apply max-768:mb-40 mb-64 text-center;
+}
+
+.section-heading .badge {
+  @apply mb-16;
+}

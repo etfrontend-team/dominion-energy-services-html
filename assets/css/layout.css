@@ -1,0 +1,401 @@
+/* ═══════════════════════════════════════════════
+   LAYOUT — header navigation + footer
+   ═══════════════════════════════════════════════ */
+
+/* ══ TOPBAR ══════════════════════════════════════ */
+
+.topbar {
+  @apply relative w-full bg-[#0d1f3c];
+}
+
+.topbar-inner {
+  @apply max-768:h-38 max-768:justify-center flex h-42 items-center justify-between gap-20;
+}
+
+.anouncement-bar {
+  @apply min-w-0 flex-1 overflow-hidden 1300:flex-none 1300:w-7/12;
+}
+
+.topbar-swiper {
+  @apply max-768:text-center h-20 min-w-0 w-full overflow-hidden;
+}
+
+.topbar-slide {
+  @apply font-dm-sans text-13 truncate leading-20 text-[rgba(255,255,255,0.85)];
+}
+
+.topbar-contact {
+  @apply max-768:hidden flex shrink-0 items-center gap-16;
+}
+
+.topbar-contact-item {
+  @apply font-dm-sans text-15 flex items-center gap-7 text-[rgba(255,255,255,0.85)] no-underline;
+  transition: color 200ms ease;
+}
+
+.topbar-contact-item:hover {
+  @apply text-white;
+}
+
+.topbar-contact-divider {
+  @apply h-14 w-px shrink-0 bg-[rgba(255,255,255,0.3)];
+}
+
+.topbar-contact-toggle {
+  @apply hidden;
+}
+
+.topbar-contact-toggle:hover {
+  @apply text-white;
+}
+
+.topbar-contact-dropdown {
+  @apply hidden w-full flex-col gap-10 bg-[#091729] px-20 pt-10 pb-14;
+}
+
+.topbar-contact-dropdown.is-open {
+  @apply flex;
+}
+
+.topbar-dropdown-item {
+  @apply font-dm-sans text-13 flex items-center gap-8 text-[rgba(255,255,255,0.85)] no-underline;
+  transition: color 200ms ease;
+}
+
+.topbar-dropdown-item:hover {
+  @apply text-white;
+}
+
+/* ══ HEADER ══════════════════════════════════════ */
+
+header {
+  @apply sticky top-0 z-50 bg-white shadow-[0_4px_9.75px_rgba(0,0,0,0.09)];
+}
+
+/* ── Inner row ── */
+.header-inner {
+  @apply max-1300:px-24 max-768:py-10 max-768:px-16 flex items-center justify-between px-40 py-16;
+}
+
+.container-md.header-inner {
+  @apply max-1440:px-20 max-1300:px-40 max-768:px-24 max-425:px-16 1440:px-33;
+}
+
+/* ── Logo ── */
+.header-logo {
+  @apply max-1300:gap-8 max-1300:h-44 max-1300:order-2 max-1300:justify-self-center max-768:h-38 flex h-54 shrink-0 items-center gap-14 no-underline;
+}
+
+.header-logo-icon-wrap {
+  @apply max-1300:h-40 max-1300:w-29 max-768:h-34 max-768:w-25 relative h-54 w-39 shrink-0 overflow-hidden;
+}
+
+.header-logo-icon-img {
+  @apply absolute top-0 max-w-none;
+  width: 166.73%;
+  height: 136.99%;
+  left: -31.51%;
+}
+
+.header-logo-text-wrap {
+  @apply max-1300:h-24 max-1300:w-86 max-768:h-21 max-768:w-76 max-425:h-19 max-425:w-68 relative h-27 w-98 shrink-0 overflow-hidden;
+}
+
+.header-logo-text-img {
+  @apply absolute max-w-none;
+  width: 100.04%;
+  height: 400%;
+  top: -300%;
+  left: -0.02%;
+}
+
+/* ── Right: hamburger + CTA ── */
+.header-right {
+  @apply max-768:gap-14 max-1300:order-1 max-1300:justify-self-start flex items-center gap-21 justify-self-end;
+}
+
+.header-cta {
+  @apply max-1300:hidden inline-flex;
+}
+
+/* ── Hamburger ── */
+.nav-hamburger {
+  @apply max-1300:flex hidden cursor-pointer items-center justify-center border-0 bg-transparent p-0;
+}
+
+.hamburger-svg rect {
+  @apply origin-center;
+  transform-box: fill-box;
+  transition:
+    transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 200ms ease;
+}
+
+.hamburger-svg {
+  @apply max-768:h-21 max-768:w-27;
+}
+
+.nav-hamburger[aria-expanded='true'] .hamburger-svg rect:nth-child(1) {
+  transform: translateY(10.286px) rotate(45deg);
+}
+
+.nav-hamburger[aria-expanded='true'] .hamburger-svg rect:nth-child(2) {
+  @apply opacity-0;
+  transform: scaleX(0);
+}
+
+.nav-hamburger[aria-expanded='true'] .hamburger-svg rect:nth-child(3) {
+  transform: translateY(-10.285px) rotate(-45deg);
+}
+
+/* ── Desktop nav (visible >1024px) ── */
+.header-nav {
+  @apply max-1300:hidden flex items-center justify-center;
+}
+
+.header-nav-list {
+  @apply 1440:gap-0 1600:gap-2 m-0 flex list-none items-center p-0;
+}
+
+.header-nav-item {
+  @apply relative;
+}
+
+.header-nav-link,
+.header-nav-btn {
+  @apply font-outfit text-16 max-1440:text-14 rounded-6 flex cursor-pointer items-center gap-5 border-0 bg-transparent px-10 py-6 leading-none font-medium whitespace-nowrap text-[#1e2d5a] no-underline;
+  transition:
+    color 200ms ease,
+    background 200ms ease;
+}
+
+.header-nav-link:hover,
+.header-nav-btn:hover {
+  @apply text-brand-navy bg-brand-navy/7;
+}
+
+.header-nav-btn svg {
+  @apply shrink-0;
+  transition: transform 200ms ease;
+}
+
+.header-nav-item--dropdown:hover .header-nav-btn svg {
+  @apply rotate-180;
+}
+
+.header-nav-dropdown {
+  @apply rounded-10 pointer-events-none invisible absolute top-full left-0 z-[200] m-0 min-w-210 -translate-y-[6px] list-none border border-black/6 bg-white py-6 opacity-0;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  transition:
+    opacity 200ms ease,
+    visibility 200ms ease,
+    transform 200ms ease;
+}
+
+.header-nav-item--dropdown:hover .header-nav-dropdown {
+  @apply pointer-events-auto visible translate-y-0 opacity-100;
+}
+
+.header-nav-dropdown-item {
+  @apply font-dm-sans text-14 block px-16 py-8 text-[#2d3748] no-underline;
+  transition:
+    color 200ms ease,
+    background 200ms ease;
+}
+
+.header-nav-dropdown-item:hover {
+  @apply text-brand-navy bg-brand-navy/6;
+}
+
+/* ── Mobile-only CTA (right col on ≤1300px header) ── */
+.header-cta-mobile {
+  @apply max-1300:inline-flex max-1300:order-3 max-1300:justify-self-end max-768:text-16 max-768:h-38 max-768:px-14 hidden;
+}
+
+/* ══ MOBILE NAV ══════════════════════════════════
+   Full-screen overlay, outside <header>
+   ═══════════════════════════════════════════════ */
+
+.mobile-nav {
+  @apply bg-royal-blue pointer-events-none invisible fixed inset-0 z-[60] overflow-hidden opacity-0;
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease;
+}
+
+.mobile-nav.is-open {
+  @apply pointer-events-auto visible opacity-100;
+}
+
+/* ── Background watermark ── */
+.mobile-nav-watermark {
+  @apply max-768:top-[12%] max-768:left-1/2 max-768:w-[88vw] max-768:translate-x-[-43%] pointer-events-none absolute top-[12.5%] left-[29.5%] w-[min(46vw,649px)] max-w-649 -translate-x-[20%] mix-blend-multiply select-none;
+}
+
+/* ── Two-column layout ── */
+.mobile-nav-layout {
+  @apply max-425:block flex h-full flex-nowrap;
+}
+
+/* ── Left panel ── */
+.mobile-nav-panel {
+  @apply max-768:h-full max-768:w-[52%] max-768:pt-24 max-768:pr-28 max-768:pb-28 max-768:pl-28 max-425:w-full max-425:gap-24 max-425:pt-22 max-425:pr-20 max-425:pb-24 max-425:pl-20 relative z-1 flex w-[46%] translate-y-16 flex-col gap-31 overflow-y-auto pt-31 pr-42 pb-40 pl-70;
+  scrollbar-width: none;
+  transition: transform 380ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-nav-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-nav.is-open .mobile-nav-panel {
+  @apply translate-y-0;
+}
+
+/* ── Top: close + logo ── */
+.mobile-nav-top {
+  @apply max-425:gap-18 flex items-center gap-30;
+}
+
+.mobile-nav-close {
+  @apply flex h-24 w-24 shrink-0 cursor-pointer items-center justify-center border-0 bg-transparent p-0;
+}
+
+.mobile-nav-logo {
+  @apply no-underline;
+}
+
+.mobile-nav-logo img {
+  @apply max-425:w-156 h-auto w-178;
+}
+
+/* ── Nav links ── */
+.mobile-nav-links {
+  @apply flex flex-col;
+}
+
+.mobile-nav-section-label {
+  @apply font-outfit text-18 max-425:text-17 block pt-2 pb-7 font-normal text-white;
+}
+
+.mobile-nav-sub-list {
+  @apply max-425:gap-10 m-0 flex list-none flex-col gap-12 ps-10 pb-13;
+}
+
+.mobile-nav-sub-item {
+  @apply font-dm-sans text-14 max-425:text-13 flex items-center gap-10 p-0 text-white/70 capitalize no-underline;
+}
+
+.mobile-nav-sub-item::before {
+  content: '';
+  @apply h-8 w-8 shrink-0 rounded-full bg-white/70;
+}
+
+.mobile-nav-sub-item:hover,
+.mobile-nav-sub-item-current {
+  @apply text-white;
+}
+
+.mobile-nav-sub-item-current::before {
+  @apply bg-white;
+}
+
+.mobile-nav-separator {
+  @apply hidden;
+}
+
+.mobile-nav-item {
+  @apply font-outfit text-18 max-425:text-17 block p-0 font-normal text-white no-underline;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-section-label:hover {
+  @apply opacity-70;
+}
+
+/* ── Contact info at bottom ── */
+.mobile-nav-contact {
+  @apply max-768:flex-wrap max-768:items-start max-425:flex-col max-425:items-start max-425:gap-6 mt-auto flex items-center gap-13;
+}
+
+.mobile-nav-contact-item {
+  @apply font-dm-sans text-16 max-425:text-14 text-white/70 no-underline;
+}
+
+.mobile-nav-contact-item + .mobile-nav-contact-item {
+  @apply flex items-center gap-13;
+}
+
+.mobile-nav-contact-item + .mobile-nav-contact-item::before {
+  content: '';
+  @apply max-425:hidden h-15 w-px bg-white/45;
+}
+
+.mobile-nav-contact-item:hover {
+  @apply text-white;
+}
+
+/* ── Right panel: hero image ── */
+.mobile-nav-image {
+  @apply max-768:block max-768:h-full max-768:min-w-0 max-768:flex-1 max-425:hidden relative h-full min-w-0 flex-1 overflow-hidden;
+}
+
+.mobile-nav-hero-img {
+  @apply absolute inset-0 h-full w-full object-cover;
+  object-position: 50% 50%;
+}
+
+/* ── Staggered fade-up for nav items ── */
+.mobile-nav-links > * {
+  @apply translate-y-10 opacity-0 transition-[opacity,transform] duration-[250ms] ease-in-out;
+}
+
+.mobile-nav.is-open .mobile-nav-links > * {
+  @apply translate-y-0 opacity-100 delay-[var(--nav-delay,0ms)];
+}
+
+/* ══ FOOTER ══════════════════════════════════════ */
+
+footer {
+  @apply flex flex-col;
+}
+
+/* ── Map ── */
+.footer-map {
+  @apply max-768:h-350 relative h-540 w-full overflow-hidden;
+}
+
+.footer-map-iframe {
+  @apply block h-full w-full border-0;
+}
+
+/* ── Footer bar ── */
+.footer-bar {
+  @apply max-1199:px-40 max-768:px-24 max-768:py-32 flex items-center justify-center bg-[#eeeeee] px-60 py-40;
+}
+
+.footer-bar-inner {
+  @apply max-768:flex-col max-768:gap-24 flex w-full items-start justify-between gap-40;
+}
+
+.footer-bar-col {
+  @apply flex flex-col gap-10;
+}
+
+.footer-bar-title {
+  @apply font-outfit text-30 max-1199:text-heading-5 max-768:text-22 text-ink leading-normal font-semibold;
+}
+
+.footer-bar-sub {
+  @apply font-dm-sans text-16 max-768:text-14 text-ink leading-24 font-normal no-underline;
+}
+
+.footer-bar-link {
+  transition: opacity 150ms ease;
+}
+
+.footer-bar-link:hover {
+  @apply opacity-70;
+}

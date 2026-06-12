@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dominion Energy Services provides innovative oilfield solutions including patented oil recovery, paraffin control, microbial treatment, and hydrocarbon sensing for operators across America." />
+    <title>Dominion Energy Services — Oilfield &amp; Operator Solutions | Houston, TX</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/white-favicon.svg" />
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="/assets/images/banner-img.webp" fetchpriority="high" />
+    <!-- Google Fonts — non-blocking (avoids render-block on FCP) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+    <!-- Swiper CSS — non-blocking (slider is below fold) -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
+    <link rel="stylesheet" href="/dist/style.css?v=copy1" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scrollbar-gutter: stable; }
+      body { font-family: 'Inter', sans-serif; margin: 0; }
+
+      header { box-shadow: none !important; }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(28px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .fu   { animation: fadeUp 0.65s cubic-bezier(0.16,1,0.3,1) both; }
+      .fu-1 { animation-delay: 0.05s; }
+      .fu-2 { animation-delay: 0.18s; }
+      .fu-3 { animation-delay: 0.30s; }
+      .fu-4 { animation-delay: 0.44s; }
+
+      @keyframes ticker {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .ticker { animation: ticker 36s linear infinite; }
+      .partners-track { animation: ticker 28s linear infinite; }
+      .partners-track:hover { animation-play-state: paused; }
+
+      .nav-lnk { position: relative; }
+      .nav-lnk::after {
+        content: ''; position: absolute; bottom: -3px; left: 0;
+        width: 0; height: 1.5px; background: var(--color-crimson);
+        transition: width 0.25s ease;
+      }
+      .nav-lnk:hover::after { width: 100%; }
+
+      .card-lift { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+      .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.10); }
+      .bar-grow { width: 24px; height: 2.5px; background: var(--color-crimson); transition: width 0.3s ease; }
+      .card-lift:hover .bar-grow { width: 48px; }
+
+      .logo-sq { transition: background 0.2s ease; }
+      .logo-sq:hover { background: var(--color-royal-blue) !important; }
+
+      /* Testimonials swiper */
+      #testimonials-swiper .swiper-slide {
+        opacity: 0.72;
+        transform: scale(0.97);
+        transition: opacity 1.5s ease, transform 1.5s ease;
+      }
+      #testimonials-swiper .swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+      #testimonials-swiper .testi-card {
+        background: var(--color-snow);
+        border-color: rgba(0,0,0,0.08);
+        transition: background 0.35s ease, border-color 0.35s ease;
+      }
+      #testimonials-swiper .swiper-slide-active .testi-card {
+        background: #000;
+        border-color: transparent;
+      }
+      #testimonials-swiper .swiper-slide-active .testi-text { color: rgba(255,255,255,0.65); }
+      #testimonials-swiper .swiper-slide-active .testi-name { color: #fff; }
+      #testimonials-swiper .swiper-slide-active .testi-role { color: var(--color-crimson); }
+      #testimonials-swiper .swiper-slide-active .testi-stars { color: var(--color-crimson); }
+      #testimonials-swiper .testi-text { color: rgba(0,0,0,0.65); transition: color 0.35s ease; }
+      #testimonials-swiper .testi-name { color: #000; transition: color 0.35s ease; }
+      #testimonials-swiper .testi-role { color: var(--color-royal-blue); transition: color 0.35s ease; }
+      #testimonials-swiper .testi-stars { color: var(--color-crimson); transition: color 0.35s ease; }
+
+      /* Nav buttons */
+      .testi-btn {
+        width: 44px; height: 44px; border-radius: 50%;
+        border: 1.5px solid rgba(0,0,0,0.12);
+        background: transparent; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s ease, border-color 0.2s ease;
+        flex-shrink: 0;
+      }
+      .testi-btn:hover { background: #000; border-color: #000; color: #fff; }
+
+      /* Mobile drawer — position:absolute so it never participates in document flow.
+         Header height stays constant. Only opacity/transform animate (no layout reflow). */
+      #copy-mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-6px);
+        pointer-events: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      }
+      #copy-mobile-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      /* Hamburger → X */
+      #copy-hamburger span {
+        transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease, width 0.28s ease;
+        transform-origin: center;
+      }
+      #copy-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 22px; }
+      #copy-hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      #copy-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 22px; }
+    </style>
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════
+         HEADER (topbar inside so both sticky together)
+    ═══════════════════════════════════ -->
+    <header class="sticky top-0 z-[100]">
+
+      <!-- Topbar -->
+      <div class="bg-brand-navy border-b border-white/10">
+        <div class="max-w-[1440px] mx-auto px-24 max-768:px-16 h-36 flex items-center justify-between gap-20">
+          <div class="flex-1 overflow-hidden min-w-0">
+            <div class="ticker flex gap-40 whitespace-nowrap w-max">
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]">Patented oil recovery solutions for operators across America</span>
+              <span class="text-crimson/50 text-11">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]">ChainBreaker™ — Innovative microbial treatment technology</span>
+              <span class="text-crimson/50 text-11">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]">H₂S Scavenger solutions for safer oilfield operations</span>
+              <span class="text-crimson/50 text-11">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]">SAFDEPAR — Non-hazardous paraffin control that delivers</span>
+              <span class="text-crimson/50 text-11">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]" aria-hidden="true">Patented oil recovery solutions for operators across America</span>
+              <span class="text-crimson/50 text-11" aria-hidden="true">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]" aria-hidden="true">ChainBreaker™ — Innovative microbial treatment technology</span>
+              <span class="text-crimson/50 text-11" aria-hidden="true">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]" aria-hidden="true">H₂S Scavenger solutions for safer oilfield operations</span>
+              <span class="text-crimson/50 text-11" aria-hidden="true">·</span>
+              <span class="font-inter text-11 text-white/85 tracking-[0.04em]" aria-hidden="true">SAFDEPAR — Non-hazardous paraffin control that delivers</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-16 shrink-0 max-768:hidden">
+            <a href="mailto:info@dominionenergyservices.net" role="link" target="_self" aria-label="Email Dominion Energy Services" class="font-inter text-11 text-white/85 no-underline transition-colors duration-[180ms] hover:text-white">info@dominionenergyservices.net</a>
+            <span class="w-px h-12 bg-white/10"></span>
+            <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services" class="font-inter text-11 text-white/85 no-underline transition-colors duration-[180ms] hover:text-white">713.899.2861</a>
+          </div>
+          <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services" class="hidden max-768:flex items-center gap-5 font-inter text-11 text-white/85 no-underline shrink-0">
+            <img src="/assets/images/call-icon.svg" alt="" width="11" height="11" loading="lazy" aria-hidden="true" class="brightness-0 invert opacity-80" />
+            713.899.2861
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav bar -->
+      <div class="bg-white border-b border-black/10">
+
+      <!-- Header bar -->
+      <div class="max-w-[1440px] mx-auto flex items-stretch h-68 max-768:h-56 pl-20 max-768:pl-14">
+
+        <!-- Logo -->
+        <a href="/pages/index.html" role="link" target="_self" aria-label="Dominion Energy Services — Home" class="no-underline flex items-stretch shrink-0">
+          <div class="logo-sq bg-brand-navy w-68 h-68 max-768:w-56 max-768:h-56 flex items-center justify-center shrink-0">
+            <img src="/assets/images/logo-full.png" alt="" width="36" height="36" loading="eager" aria-hidden="true" class="object-contain brightness-0 invert w-34 h-34 max-768:w-28 max-768:h-28" />
+          </div>
+          <div class="flex flex-col justify-center py-0 pr-20 pl-16 max-768:pl-12 max-768:pr-14 border-r border-black/10">
+            <span class="font-outfit font-bold text-14 max-768:text-12 tracking-[0.05em] text-black leading-none block">DOMINION ENERGY</span>
+            <span class="font-inter font-medium text-[9px] max-425:hidden tracking-[0.22em] text-royal-blue uppercase mt-4 block">Services · Houston TX</span>
+          </div>
+        </a>
+
+        <!-- Desktop nav (hidden ≤1300px) -->
+        <nav class="max-1300:hidden flex items-center justify-center gap-0 px-8 flex-1 min-w-0" aria-label="Primary navigation">
+
+          <div class="group relative py-8 flex items-center">
+            <button
+              type="button"
+              aria-label="About Us navigation"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="flex items-center gap-5 px-8 py-6 bg-transparent border-0 cursor-pointer font-inter text-[11.5px] font-medium text-brand-navy tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue"
+            >
+              About Us
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pointer-events-none invisible opacity-0 -translate-y-[5px] group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,transform,visibility] duration-[180ms] ease-out absolute top-full left-0 w-[220px] bg-white border border-black/10 [border-top:2px_solid_var(--color-brand-navy)] rounded-4 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[200]">
+              <a href="/about-DES.html" role="link" target="_self" aria-label="Condensate Pump" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] border-b border-black/6 hover:text-royal-blue hover:bg-snow">Condensate Pump</a>
+              <a href="/about-DES.html" role="link" target="_self" aria-label="Separation" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] border-b border-black/6 hover:text-royal-blue hover:bg-snow">Separation</a>
+              <a href="/about-DES.html" role="link" target="_self" aria-label="BIO2 Solutions" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] border-b border-black/6 hover:text-royal-blue hover:bg-snow">BIO2 Solutions</a>
+              <a href="/about-DES.html" role="link" target="_self" aria-label="Truclear Water Solutions" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] border-b border-black/6 hover:text-royal-blue hover:bg-snow">Truclear Water Solutions</a>
+              <a href="/about-DES.html" role="link" target="_self" aria-label="ASP-200 Soilbinder" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] border-b border-black/6 hover:text-royal-blue hover:bg-snow">ASP-200 Soilbinder</a>
+              <a href="/about-DES.html" role="link" target="_self" aria-label="Safdepar Paraffin Control" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] border-b border-black/6 hover:text-royal-blue hover:bg-snow">Safdepar Paraffin Control</a>
+              <a href="/about-DES.html" role="link" target="_self" aria-label="Microbial Treatment" class="block px-16 py-10 font-inter text-12 text-brand-navy no-underline transition-all duration-[150ms] hover:text-royal-blue hover:bg-snow">Microbial Treatment</a>
+            </div>
+          </div>
+
+          <a href="/microbial-treatment-chainbreaker.html" role="link" target="_self" aria-label="ChainBreaker microbial treatment" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">ChainBreaker&#x2122;</a>
+          <a href="/oil-field-wastewater-treatment.html" role="link" target="_self" aria-label="Wastewater treatment" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">Wastewater</a>
+          <a href="/hydrocarbon-locating-survey.html" role="link" target="_self" aria-label="Hydrocarbon locating survey" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">Hydrocarbon Survey</a>
+          <a href="/hydrogen-sulfide-scavenger.html" role="link" target="_self" aria-label="Hydrogen sulfide scavenger" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">H&#x2082;S Scavenger</a>
+          <a href="/non-hazardous-paraffin-solution.html" role="link" target="_self" aria-label="SAFDEPAR paraffin control" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">SAFDEPAR</a>
+          <a href="/residual-oil-recovery.html" role="link" target="_self" aria-label="Oil recovery" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">Oil Recovery</a>
+          <a href="/midstream-refinery.html" role="link" target="_self" aria-label="Midstream and refinery" class="nav-lnk px-8 py-6 font-inter text-[11.5px] font-medium text-brand-navy no-underline tracking-[0.02em] transition-colors duration-[180ms] whitespace-nowrap hover:text-royal-blue">Midstream</a>
+        </nav>
+
+        <!-- Right: phone + CTA + hamburger -->
+        <div class="flex items-center gap-12 px-20 max-768:px-12 max-768:border-l-0 border-l border-black/10 shrink-0 ml-auto">
+          <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services" class="max-1300:hidden flex items-center gap-6 font-inter text-12 text-brand-navy/60 no-underline transition-colors duration-[180ms] hover:text-black">
+            <img src="/assets/images/call-icon.svg" alt="" width="13" height="13" loading="lazy" aria-hidden="true" class="brightness-0 opacity-60" />
+            713.899.2861
+          </a>
+          <a href="/contact.html" role="link" target="_self" aria-label="Contact Dominion Energy Services" class="max-768:hidden inline-flex items-center gap-6 px-18 h-36 bg-brand-navy font-inter text-[11.5px] font-semibold text-white no-underline tracking-[0.08em] uppercase rounded-[2px] transition-colors duration-[180ms] whitespace-nowrap hover:bg-royal-blue">
+            Contact Us
+          </a>
+          <!-- Hamburger (visible ≤1300px) -->
+          <button
+            id="copy-hamburger"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="copy-mobile-menu"
+            class="1300:hidden flex flex-col gap-[5px] bg-transparent border-0 cursor-pointer p-4 items-center"
+          >
+            <span class="block w-22 h-[2px] bg-brand-navy/70 rounded-[2px]"></span>
+            <span class="block w-14 h-[2px] bg-brand-navy/70 rounded-[2px]"></span>
+            <span class="block w-22 h-[2px] bg-brand-navy/70 rounded-[2px]"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile drawer (slide-down white panel — different from index.html fullscreen overlay) -->
+      <div id="copy-mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <div class="border-t border-black/8 bg-white">
+
+          <!-- Main nav links -->
+          <div class="px-24 max-425:px-16 pt-8 pb-4">
+
+            <!-- About Us — has submenu, shows arrow + expandable sub-list -->
+            <div>
+              <button
+                id="copy-about-toggle"
+                type="button"
+                aria-label="Toggle About Us submenu"
+                aria-expanded="false"
+                class="flex items-center justify-between w-full py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy bg-transparent border-0 border-b border-black/6 cursor-pointer p-0 pb-0 pt-0 hover:text-royal-blue transition-colors duration-[150ms]"
+                style="border-top:none; border-left:none; border-right:none; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 13px 0;"
+              >
+                About Us
+                <svg id="copy-about-chevron" width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true" style="transition: transform 0.25s ease;"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="copy-about-submenu" style="max-height:0; overflow:hidden; transition: max-height 0.32s cubic-bezier(0.16,1,0.3,1);">
+                <div class="pl-14 py-6 border-b border-black/6 bg-snow/60">
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="Condensate Pump" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms] border-b border-black/4">Condensate Pump</a>
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="Separation" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms] border-b border-black/4">Separation</a>
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="BIO2 Solutions" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms] border-b border-black/4">BIO2 Solutions</a>
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="Truclear Water Solutions" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms] border-b border-black/4">Truclear Water Solutions</a>
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="ASP-200 Soilbinder" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms] border-b border-black/4">ASP-200 Soilbinder</a>
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="Safdepar Paraffin Control" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms] border-b border-black/4">Safdepar Paraffin Control</a>
+                  <a href="/about-DES.html" role="link" target="_self" aria-label="Microbial Treatment" class="block py-8 font-inter text-14 text-brand-navy/75 no-underline hover:text-royal-blue transition-colors duration-[150ms]">Microbial Treatment</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regular links — no submenu, no arrows -->
+            <a href="/microbial-treatment-chainbreaker.html" role="link" target="_self" aria-label="ChainBreaker microbial treatment" class="block py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">ChainBreaker&#x2122;</a>
+            <a href="/oil-field-wastewater-treatment.html" role="link" target="_self" aria-label="Wastewater treatment" class="block py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">Wastewater</a>
+            <a href="/hydrocarbon-locating-survey.html" role="link" target="_self" aria-label="Hydrocarbon locating survey" class="block py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">Hydrocarbon Survey</a>
+            <a href="/hydrogen-sulfide-scavenger.html" role="link" target="_self" aria-label="Hydrogen sulfide scavenger" class="block py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">H&#x2082;S Scavenger</a>
+            <a href="/non-hazardous-paraffin-solution.html" role="link" target="_self" aria-label="SAFDEPAR paraffin control" class="block py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">SAFDEPAR</a>
+            <a href="/residual-oil-recovery.html" role="link" target="_self" aria-label="Oil recovery" class="block py-13 border-b border-black/6 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">Oil Recovery</a>
+            <a href="/midstream-refinery.html" role="link" target="_self" aria-label="Midstream and refinery" class="block py-13 font-inter text-15 font-medium text-brand-navy no-underline hover:text-royal-blue transition-colors duration-[150ms]">Midstream</a>
+          </div>
+
+          <!-- Contact strip -->
+          <div class="bg-snow border-t border-black/6 px-24 max-425:px-16 py-16 flex flex-col gap-10">
+            <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services" class="flex items-center gap-7 font-inter text-13 text-black/55 no-underline hover:text-brand-navy transition-colors duration-[150ms]">
+              <img src="/assets/images/call-icon.svg" alt="" width="12" height="12" loading="lazy" aria-hidden="true" class="brightness-0 opacity-50" />
+              713.899.2861
+            </a>
+            <a href="mailto:info@dominionenergyservices.net" role="link" target="_self" aria-label="Email Dominion Energy Services" class="font-inter text-13 text-black/55 no-underline hover:text-brand-navy transition-colors duration-[150ms]">info@dominionenergyservices.net</a>
+            <a href="/contact.html" role="link" target="_self" aria-label="Contact Dominion Energy Services" class="inline-flex items-center self-start mt-4 px-20 h-36 bg-brand-navy font-inter text-[11px] font-semibold text-white no-underline tracking-[0.08em] uppercase rounded-[2px] transition-colors duration-[180ms] whitespace-nowrap hover:bg-royal-blue">
+              Contact Us
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <main>
+
+      <!-- ═══════════════════════════════════
+           HERO
+      ═══════════════════════════════════ -->
+      <!--
+        ══ HERO PATTERN OPTIONS ══════════════════════════════════════════
+        OPTION A — Crosshatch grid (current, keep as reference):
+        style="background-color:#e8edf8;
+               background-image: linear-gradient(rgba(56,72,146,0.08) 1px, transparent 1px),
+                                  linear-gradient(90deg, rgba(56,72,146,0.08) 1px, transparent 1px);
+               background-size: 44px 44px;"
+        Fade overlay: background: linear-gradient(to bottom, transparent 55%, #e8edf8 100%),
+                                   linear-gradient(to right, #e8edf8 0%, transparent 12%, transparent 88%, #e8edf8 100%);
+
+        OPTION B — Diagonal blueprint lines:
+        style="background-color:#e8edf8;
+               background-image: repeating-linear-gradient(-45deg,
+                 rgba(56,72,146,0.07) 0px, rgba(56,72,146,0.07) 1px,
+                 transparent 1px, transparent 22px);"
+        Fade overlay: same as option A but replace #e8edf8 accordingly.
+
+        OPTION C — Topographic contour lines (SVG inline):
+        style="background-color:#e8edf8;
+               background-image: url('data:image/svg+xml,...contour svg...');"
+        ══════════════════════════════════════════════════════════════════
+      -->
+
+      <!-- ACTIVE: Animated canvas particle network (molecular bonds theme) -->
+      <section
+        class="relative overflow-hidden flex flex-col"
+        style="background-color:#e8edf8;"
+        aria-label="Dominion Energy Services — Hero"
+        id="home"
+      >
+        <!-- Animated molecular network canvas -->
+        <canvas id="hero-bg-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+        <!-- Edge vignette to blend canvas into bg -->
+        <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="z-index:1;background:linear-gradient(to bottom,#e8edf8 0%,transparent 14%,transparent 75%,#e8edf8 100%),linear-gradient(to right,#e8edf8 0%,transparent 8%,transparent 92%,#e8edf8 100%);"></div>
+        <!-- Top accent line -->
+        <!-- <div aria-hidden="true" class="absolute top-0 left-0 right-0 h-[3px] pointer-events-none" style="z-index:2;background:linear-gradient(90deg,transparent,rgba(56,72,146,0.4) 30%,rgba(56,72,146,0.4) 70%,transparent);"></div> -->
+
+<div class="max-w-[1440px] mx-auto px-60 max-1300:px-40 max-768:px-24 max-425:px-16 flex items-center gap-60 max-1300:gap-40 max-768:flex-col max-768:gap-36 flex-wrap pt-60 max-768:pt-40 pb-80 max-768:pb-48 relative z-[3]">
+
+          <div class="flex-1 min-w-[320px] max-w-[620px] max-768:min-w-0 max-768:w-full max-768:max-w-none">
+            <div class="fu fu-1 inline-flex h-35 items-center rounded-4 border border-black/10 bg-[rgba(234,238,255,0.3)] px-12 mb-24 max-768:mb-16">
+              <span class="font-dm-sans text-royal-blue text-14 max-768:text-12 font-bold tracking-[0.06em] uppercase whitespace-nowrap">Efficiency Meets Innovation</span>
+            </div>
+
+            <h1 class="fu fu-2 font-outfit text-[clamp(36px,5vw,76px)] font-medium leading-[1.05] text-black mb-20 max-768:mb-16 tracking-[-0.02em] max-w-[560px]">
+              Engineering solutions that deliver.
+            </h1>
+
+            <p class="fu fu-3 font-dm-sans text-16 max-768:text-15 leading-[1.72] text-black/55 max-w-[480px] max-768:max-w-none mb-36 max-768:mb-28">
+              Combining technical knowledge, environmental responsibility, and practical solutions to help operators cut costs, improve production, and maximize ROI.
+            </p>
+
+            <div class="fu fu-4 flex flex-wrap gap-12 mb-52 max-768:mb-36">
+              <a href="#contact" role="link" target="_self" aria-label="Get started with Dominion Energy Services" class="btn btn-orange">
+                Get Started
+              </a>
+              <a href="#services" role="link" target="_self" aria-label="Learn more about our services" class="btn btn-outline-dark">
+                Learn More
+              </a>
+            </div>
+
+            <div class="fu fu-4 flex flex-wrap border-t border-black/8 pt-28 max-768:pt-20 gap-y-16">
+              <div class="pr-32 max-768:pr-24">
+                <div id="stat-exp" data-count="30" data-suffix="+" class="font-outfit text-[38px] max-768:text-[30px] font-semibold text-black leading-none">30+</div>
+                <div class="font-dm-sans text-11 text-black/45 uppercase tracking-[0.12em] mt-5">Yrs Experience</div>
+              </div>
+              <div class="w-px bg-black/8 mr-32 max-768:mr-24"></div>
+              <div class="pr-32 max-768:pr-24">
+                <div id="stat-pat" data-count="25" data-suffix="+" class="font-outfit text-[38px] max-768:text-[30px] font-semibold text-black leading-none">25+</div>
+                <div class="font-dm-sans text-11 text-black/45 uppercase tracking-[0.12em] mt-5">Patents</div>
+              </div>
+              <div class="w-px bg-black/8 mr-32 max-768:mr-24"></div>
+              <div>
+                <div id="stat-ret" data-count="95" data-suffix="%" class="font-outfit text-[38px] max-768:text-[30px] font-semibold text-brand-navy leading-none">95%</div>
+                <div class="font-dm-sans text-11 text-black/45 uppercase tracking-[0.12em] mt-5">Retention</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="hero-img-wrap" class="flex-1 min-w-[300px] max-768:min-w-0 max-768:w-full relative overflow-hidden rounded-[2px] h-[520px] max-1300:h-[460px] max-768:h-[300px]">
+            <div aria-hidden="true" class="absolute -top-8 -left-8 w-40 h-40 [border-top:2px_solid_var(--color-brand-navy)] [border-left:2px_solid_var(--color-brand-navy)] z-[2] pointer-events-none max-768:hidden"></div>
+            <div aria-hidden="true" class="absolute -bottom-8 -right-8 w-40 h-40 [border-bottom:2px_solid_var(--color-brand-navy)] [border-right:2px_solid_var(--color-brand-navy)] z-[2] pointer-events-none max-768:hidden"></div>
+            <img
+              id="hero-img"
+              src="/assets/images/banner-img.webp"
+              alt="Industrial energy services operations at an oilfield site"
+              width="1920"
+              height="700"
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+              class="w-full h-full object-cover block will-change-transform"
+            />
+            <div class="absolute bottom-20 left-20 max-768:bottom-12 max-768:left-12 bg-white border border-black/8 [border-left:3px_solid_var(--color-brand-navy)] rounded-4 px-18 max-768:px-12 py-14 max-768:py-10 shadow-[0_4px_16px_rgba(0,0,0,0.12)]">
+              <div class="font-outfit text-[20px] max-768:text-[16px] font-semibold text-brand-navy leading-none">4.9 ★</div>
+              <div class="font-dm-sans text-[9.5px] max-768:text-[8.5px] text-black/45 uppercase tracking-[0.12em] mt-3">15,000+ Client Reviews</div>
+            </div>
+            <img
+              src="/assets/images/spin-img.svg"
+              alt=""
+              width="100"
+              height="100"
+              loading="lazy"
+              aria-hidden="true"
+              class="absolute bottom-16 right-16 max-768:bottom-10 max-768:right-10 w-[100px] max-768:w-[68px] h-auto opacity-40"
+            />
+          </div>
+
+        </div>
+
+        <!-- Partners strip — infinite marquee -->
+        <div class="border-t border-black/6 py-18 max-768:py-14 relative z-[1]" aria-label="Our trusted partners">
+          <div class="flex items-center gap-20">
+            <span class="font-dm-sans text-[9.5px] font-semibold tracking-[0.2em] uppercase text-black/35 shrink-0 pl-60 max-1300:pl-40 max-768:pl-24 max-425:pl-16 max-768:hidden">Partners</span>
+            <div class="max-768:hidden w-px h-18 bg-black/8 shrink-0"></div>
+            <!-- overflow-hidden only on track wrapper so label stays static -->
+            <div class="overflow-hidden flex-1 min-w-0">
+            <div class="partners-track flex items-center gap-60 whitespace-nowrap w-max">
+              <img src="/assets/images/bromo.png" alt="Bromo" width="90" height="22" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/abper.png" alt="Abper" width="90" height="24" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/barney.png" alt="Barney" width="90" height="22" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/ares.png" alt="Ares" width="90" height="22" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/pieso.png" alt="Pieso" width="90" height="40" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/wagon.png" alt="Wagon" width="90" height="22" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/boson.png" alt="Boson" width="90" height="24" loading="lazy" class="object-contain grayscale h-[22px] w-auto" />
+              <!-- Duplicate set for seamless loop -->
+              <img src="/assets/images/bromo.png" alt="" width="90" height="22" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/abper.png" alt="" width="90" height="24" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/barney.png" alt="" width="90" height="22" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/ares.png" alt="" width="90" height="22" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/pieso.png" alt="" width="90" height="40" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/wagon.png" alt="" width="90" height="22" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+              <img src="/assets/images/boson.png" alt="" width="90" height="24" loading="lazy" aria-hidden="true" class="object-contain grayscale h-[22px] w-auto" />
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           WHAT WE DO
+      ═══════════════════════════════════ -->
+      <section class="bg-white py-96 max-768:py-60" aria-label="What Dominion Energy Services does" id="services">
+        <div class="max-w-[1440px] mx-auto px-32 max-768:px-24 max-425:px-16 grid grid-cols-2 max-768:grid-cols-1 gap-64 max-1300:gap-40 max-768:gap-36 items-center">
+
+          <div class="relative max-768:order-2 overflow-hidden rounded-[2px]">
+            <div aria-hidden="true" class="absolute top-0 left-0 w-[3px] h-72 bg-crimson z-[1]"></div>
+            <img
+              id="whatwedo-img"
+              src="/assets/images/tankbattery2.jpg"
+              alt="Large storage tanks and process piping at an energy facility"
+              width="1200"
+              height="1800"
+              loading="lazy"
+              class="w-full h-[520px] max-1300:h-[420px] max-768:h-[280px] object-cover block will-change-transform"
+            />
+            <div class="absolute bottom-24 right-24 max-768:bottom-16 max-768:right-16 flex gap-10">
+              <div class="bg-black/92 border border-white/10 rounded-4 px-18 max-768:px-12 py-14 max-768:py-10 text-center backdrop-blur-[8px]">
+                <div class="font-outfit text-[26px] max-768:text-[20px] font-extrabold text-white leading-none">30+</div>
+                <div class="font-inter text-[9px] text-white/40 uppercase tracking-[0.12em] mt-3">Years</div>
+              </div>
+              <div class="bg-brand-navy rounded-4 px-18 max-768:px-12 py-14 max-768:py-10 text-center">
+                <div class="font-outfit text-[26px] max-768:text-[20px] font-extrabold text-white leading-none">25+</div>
+                <div class="font-inter text-[9px] text-white/75 uppercase tracking-[0.12em] mt-3">Patents</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="max-768:order-1">
+            <div class="flex items-center gap-10 mb-18">
+              <span class="w-28 h-[2px] bg-crimson inline-block"></span>
+              <span class="font-inter text-[10.5px] font-semibold tracking-[0.2em] uppercase text-crimson">What We Do</span>
+            </div>
+            <h2 class="font-outfit text-[clamp(26px,3vw,44px)] font-extrabold text-black leading-[1.1] mb-20 tracking-[-0.015em]">
+              Delivering solutions that improve performance
+            </h2>
+            <p class="font-inter text-15 max-768:text-14 leading-[1.72] text-black/55 mb-16">
+              Dominion Energy Services is focused on providing products and services that cut costs, solve problems, improve production and increase ROI for the operator.
+            </p>
+            <p class="font-inter text-15 max-768:text-14 leading-[1.72] text-black/55 mb-36 max-768:mb-28">
+              Patented oil recovery units cost effectively capture low levels of residual oil from produced water to increase revenue and margins for the operator.
+            </p>
+            <a href="/about-DES.html" role="link" target="_self" aria-label="Learn more about Dominion Energy Services" class="inline-flex items-center gap-8 px-24 h-44 bg-brand-navy font-inter text-[11.5px] font-semibold text-white no-underline tracking-[0.1em] uppercase rounded-[2px] transition-colors duration-[180ms] hover:bg-royal-blue">
+              Learn More
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           PRODUCTS
+      ═══════════════════════════════════ -->
+      <section class="bg-snow py-96 max-768:py-60" aria-label="Our product and technology offering">
+        <div class="max-w-[1440px] mx-auto px-32 max-768:px-24 max-425:px-16">
+
+          <div class="text-center max-w-[500px] mx-auto mb-56 max-768:mb-36">
+            <div class="inline-flex items-center gap-10 mb-16">
+              <span class="w-20 h-[2px] bg-crimson inline-block"></span>
+              <span class="font-inter text-[10.5px] font-semibold tracking-[0.2em] uppercase text-crimson">Advancing American Energy</span>
+              <span class="w-20 h-[2px] bg-crimson inline-block"></span>
+            </div>
+            <h2 class="font-outfit text-[clamp(24px,3vw,40px)] font-extrabold text-black leading-[1.1] tracking-[-0.015em]">Our Product And Technology Offering</h2>
+          </div>
+
+          <div id="products-grid" class="grid grid-cols-4 max-1300:grid-cols-2 max-768:grid-cols-1 gap-18 max-768:gap-14">
+
+            <div class="card-lift bg-white rounded-[3px] px-26 py-30 max-768:px-20 max-768:py-22 border border-black/10">
+              <div class="w-50 h-50 bg-brand-navy rounded-8 flex items-center justify-center mb-18">
+                <img src="/assets/images/oil-recovery-icon.svg" alt="" width="26" height="26" loading="lazy" aria-hidden="true" class="brightness-0 invert" />
+              </div>
+              <h3 class="font-outfit text-[17px] font-bold text-black mb-10">Incremental Oil Recovery</h3>
+              <p class="font-inter text-13 leading-[1.65] text-black/55 mb-18">We specialize in locating and extracting untapped oil and gas deposits.</p>
+              <div class="bar-grow"></div>
+            </div>
+
+            <div class="card-lift bg-white rounded-[3px] px-26 py-30 max-768:px-20 max-768:py-22 border border-black/10">
+              <div class="w-50 h-50 bg-brand-navy rounded-8 flex items-center justify-center mb-18">
+                <img src="/assets/images/sensor-icon.svg" alt="" width="26" height="26" loading="lazy" aria-hidden="true" class="brightness-0 invert" />
+              </div>
+              <h3 class="font-outfit text-[17px] font-bold text-black mb-10">Hydrocarbon Sensing</h3>
+              <p class="font-inter text-13 leading-[1.65] text-black/55 mb-18">Our expertise lies in identifying and drilling new oil and gas fields.</p>
+              <div class="bar-grow"></div>
+            </div>
+
+            <div class="card-lift bg-white rounded-[3px] px-26 py-30 max-768:px-20 max-768:py-22 border border-black/10">
+              <div class="w-50 h-50 bg-brand-navy rounded-8 flex items-center justify-center mb-18">
+                <img src="/assets/images/paraffin-icon.svg" alt="" width="26" height="26" loading="lazy" aria-hidden="true" class="brightness-0 invert" />
+              </div>
+              <h3 class="font-outfit text-[17px] font-bold text-black mb-10">Paraffin Control</h3>
+              <p class="font-inter text-13 leading-[1.65] text-black/55 mb-18">Focused on discovering and developing new oil and gas reserves.</p>
+              <div class="bar-grow"></div>
+            </div>
+
+            <div class="card-lift bg-white rounded-[3px] px-26 py-30 max-768:px-20 max-768:py-22 border border-black/10">
+              <div class="w-50 h-50 bg-brand-navy rounded-8 flex items-center justify-center mb-18">
+                <img src="/assets/images/microbial-icon.svg" alt="" width="26" height="26" loading="lazy" aria-hidden="true" class="brightness-0 invert" />
+              </div>
+              <h3 class="font-outfit text-[17px] font-bold text-black mb-10">Microbial Treatment</h3>
+              <p class="font-inter text-13 leading-[1.65] text-black/55 mb-18">Providing solutions for finding and drilling fresh oil and gas sources.</p>
+              <div class="bar-grow"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           IMPACT / VIDEO
+      ═══════════════════════════════════ -->
+      <section class="bg-black relative overflow-hidden" aria-label="Creating impact through innovation and expertise">
+        <div aria-hidden="true" class="absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] [background-size:64px_64px] pointer-events-none"></div>
+        <div class="max-w-[1440px] mx-auto grid grid-cols-2 max-768:grid-cols-1 min-h-[520px] max-768:min-h-0 relative z-[1]">
+
+          <div class="pt-80 pr-56 pb-80 pl-32 max-1300:pt-60 max-1300:pr-40 max-1300:pb-60 max-1300:pl-24 max-768:pt-48 max-768:pr-24 max-768:pb-48 max-768:pl-24 max-425:px-16 flex flex-col justify-center">
+            <div class="flex items-center gap-10 mb-18">
+              <span class="w-28 h-[2px] bg-crimson inline-block"></span>
+              <span class="font-inter text-[10.5px] font-semibold tracking-[0.2em] uppercase text-crimson">Our Impact</span>
+            </div>
+            <h2 class="font-outfit text-[clamp(24px,3vw,42px)] font-extrabold text-white leading-[1.1] mb-44 max-768:mb-28 tracking-[-0.015em]">Creating impact through innovation and expertise</h2>
+
+            <div class="flex flex-col">
+              <div class="flex gap-22 max-768:gap-16 items-start pb-28 max-768:pb-20 border-b border-white/7 mb-28 max-768:mb-20">
+                <div id="stat-impact" data-count="95" data-suffix="%" class="font-outfit text-[52px] max-768:text-[40px] font-extrabold text-crimson leading-none shrink-0">95%</div>
+                <p class="font-inter text-14 max-768:text-13 leading-[1.65] text-white/48 mt-6">Delivering consistent results through innovative solutions, trusted expertise, and a commitment to exceeding client expectations.</p>
+              </div>
+              <div class="flex gap-22 max-768:gap-16 items-start">
+                <div class="font-outfit text-[52px] max-768:text-[40px] font-extrabold text-crimson leading-none shrink-0">24/7</div>
+                <p class="font-inter text-14 max-768:text-13 leading-[1.65] text-white/48 mt-6">A proven track record helping organizations improve efficiency, reduce costs, and achieve long-term operational success.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative overflow-hidden max-768:h-[260px]">
+            <img
+              id="impact-img"
+              src="/assets/images/video-img.webp"
+              alt="Aerial view of industrial wastewater treatment basins and facility"
+              width="1920"
+              height="1156"
+              loading="lazy"
+              class="w-full h-full object-cover block brightness-[0.5] contrast-[1.1]"
+            />
+            <button
+              type="button"
+              aria-label="Play Dominion Energy Services video"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 max-768:w-56 max-768:h-56 bg-white/12 border-[1.5px] border-white/35 rounded-full flex items-center justify-center cursor-pointer transition-all duration-[220ms] backdrop-blur-[4px] hover:bg-crimson/85 hover:border-crimson hover:scale-[1.08]"
+            >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M7 4.5L18 11L7 17.5V4.5Z" fill="white"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           TECHNICAL EXPERTISE
+      ═══════════════════════════════════ -->
+      <section class="bg-snow py-96 max-768:py-60" aria-label="Technical expertise">
+        <div class="max-w-[1440px] mx-auto px-32 max-768:px-24 max-425:px-16">
+
+          <div class="flex items-end max-768:items-start justify-between gap-32 max-768:gap-16 flex-wrap mb-44 max-768:mb-28 max-768:flex-col">
+            <div>
+              <div class="flex items-center gap-10 mb-16">
+                <span class="w-28 h-[2px] bg-crimson inline-block"></span>
+                <span class="font-inter text-[10.5px] font-semibold tracking-[0.2em] uppercase text-crimson">Technical Expertise</span>
+              </div>
+              <h2 class="font-outfit text-[clamp(24px,3vw,42px)] font-extrabold text-black leading-[1.1] tracking-[-0.015em] max-w-[440px]">Transforming challenges into measurable results</h2>
+            </div>
+            <p class="font-inter text-14 leading-[1.7] text-black/55 max-w-[340px] max-768:max-w-none">Through patented technologies and industry expertise, we help clients improve efficiency and enhance performance.</p>
+          </div>
+
+          <div class="grid grid-cols-3 max-1300:grid-cols-2 max-768:grid-cols-1 gap-16 max-768:gap-12">
+
+            <div class="flex flex-col gap-16 max-768:gap-12">
+              <div class="bg-white rounded-[3px] p-26 max-768:p-20 border border-black/10 flex-1">
+                <div class="flex items-center gap-8 mb-12">
+                  <span class="w-7 h-7 bg-crimson rounded-full shrink-0"></span>
+                  <span class="font-inter text-[10px] font-semibold tracking-[0.15em] uppercase text-crimson">ChainBreaker™ Technology</span>
+                </div>
+                <h3 class="font-outfit text-[19px] max-768:text-[17px] font-bold text-black mb-10">Microbial Treatment Solutions</h3>
+                <p class="font-inter text-13 leading-[1.6] text-black/55">Advanced microbial technologies designed to improve production performance.</p>
+              </div>
+              <div class="bg-black rounded-[3px] p-26 max-768:p-20 border border-white/6 flex-1 relative overflow-hidden">
+                <div aria-hidden="true" class="absolute -top-24 -right-24 w-[100px] h-[100px] bg-royal-blue/12 rounded-full"></div>
+                <h3 class="font-outfit text-[19px] max-768:text-[17px] font-bold text-white mb-10 relative z-[1]">Wastewater Treatment</h3>
+                <p class="font-inter text-13 leading-[1.6] text-white/42 mb-14 relative z-[1]">Cost-effective systems for municipalities and industrial facilities.</p>
+                <img src="/assets/images/waves-icon.svg" alt="" width="44" height="44" loading="lazy" aria-hidden="true" class="opacity-35 relative z-[1]" />
+              </div>
+            </div>
+
+            <div class="bg-white rounded-[3px] p-26 max-768:p-20 border border-black/10 flex flex-col justify-between">
+              <div>
+                <h3 class="font-outfit text-[19px] max-768:text-[17px] font-bold text-black mb-10">Hydrocarbon Locating Survey</h3>
+                <p class="font-inter text-13 leading-[1.6] text-black/55">Accurate survey technologies used to identify hydrocarbon presence and support smarter exploration and production decisions.</p>
+              </div>
+              <div class="mt-20">
+                <div id="stat-accuracy" data-count="95" data-suffix="%" class="font-outfit text-[64px] max-768:text-[48px] font-extrabold text-black leading-none tracking-[-0.02em]">95%</div>
+                <div class="font-inter text-[10px] text-black/50 uppercase tracking-[0.12em] mt-4">Accuracy Rate</div>
+                <div class="w-28 h-[3px] bg-crimson mt-10"></div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-16 max-768:gap-12 max-1300:col-span-2 max-1300:grid max-1300:grid-cols-2 max-768:col-span-1 max-768:flex max-768:flex-col">
+              <img src="/assets/images/measurement-img.png" alt="Technical measurement drawing of industrial equipment" width="595" height="690" loading="lazy" class="w-full h-[192px] max-768:h-[200px] object-cover rounded-[3px] block" />
+              <div class="bg-white rounded-[3px] p-26 max-768:p-20 border border-black/10 flex-1">
+                <div class="flex items-center gap-8 mb-12">
+                  <span class="w-7 h-7 bg-crimson rounded-full shrink-0"></span>
+                  <span class="font-inter text-[10px] font-semibold tracking-[0.15em] uppercase text-crimson">Oil Recovery Solutions</span>
+                </div>
+                <p class="font-inter text-13 leading-[1.6] text-black/55 mb-12">Patented recovery technologies to increase production and maximize returns.</p>
+                <h3 class="font-outfit text-[17px] font-bold text-black">Incremental Recovery Systems</h3>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-20 max-768:mt-14 bg-white rounded-[3px] px-24 max-768:px-16 py-18 border border-black/10 flex items-center gap-14">
+            <div class="flex items-center shrink-0" aria-hidden="true">
+              <span class="w-34 h-34 max-768:w-28 max-768:h-28 rounded-full bg-brand-navy border-2 border-white flex items-center justify-center font-outfit text-12 max-768:text-10 font-bold text-white z-[4]">A</span>
+              <span class="w-34 h-34 max-768:w-28 max-768:h-28 rounded-full bg-crimson border-2 border-white flex items-center justify-center font-outfit text-12 max-768:text-10 font-bold text-white -ml-8 max-768:-ml-6 z-[3]">M</span>
+              <span class="w-34 h-34 max-768:w-28 max-768:h-28 rounded-full bg-royal-blue border-2 border-white flex items-center justify-center font-outfit text-12 max-768:text-10 font-bold text-white -ml-8 max-768:-ml-6 z-[2]">S</span>
+              <span class="w-34 h-34 max-768:w-28 max-768:h-28 rounded-full bg-brand-navy border-2 border-white flex items-center justify-center font-outfit text-12 max-768:text-10 font-bold text-white -ml-8 max-768:-ml-6 z-[1]">J</span>
+            </div>
+            <div>
+              <p class="font-outfit text-15 max-768:text-14 font-bold text-black">4.9 Average Rating <span class="text-crimson" aria-hidden="true">★</span></p>
+              <p class="font-inter text-[11.5px] max-768:text-[10.5px] text-black/50 mt-2">More Than 15,000+ Reviews From Clients</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           TESTIMONIALS
+      ═══════════════════════════════════ -->
+      <section class="bg-white py-96 max-768:py-60 overflow-hidden" aria-label="Our testimonials">
+
+        <!-- Header + nav row -->
+        <div class="max-w-[1440px] mx-auto px-32 max-768:px-24 max-425:px-16 flex items-end justify-between gap-20 mb-44 max-768:mb-32 flex-wrap">
+          <div>
+            <div class="inline-flex items-center gap-10 mb-16">
+              <span class="w-20 h-[2px] bg-crimson inline-block"></span>
+              <span class="font-inter text-[10.5px] font-semibold tracking-[0.2em] uppercase text-crimson">Our Testimonials</span>
+              <span class="w-20 h-[2px] bg-crimson inline-block"></span>
+            </div>
+            <h2 class="font-outfit text-[clamp(24px,3vw,42px)] font-extrabold text-black leading-[1.1] tracking-[-0.015em]">Trusted solutions. Proven results.</h2>
+          </div>
+          <!-- Prev / Next -->
+          <div class="flex items-center gap-10 shrink-0">
+            <button type="button" aria-label="Previous testimonial" id="testi-prev" class="testi-btn">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" aria-label="Next testimonial" id="testi-next" class="testi-btn">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Swiper — slides peek left/right, active = black -->
+        <div class="swiper" id="testimonials-swiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testi-card rounded-[3px] p-32 max-768:p-24 border h-full flex flex-col">
+                <div class="flex gap-2 mb-16 testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="testi-text font-inter text-15 max-768:text-14 leading-[1.72] mb-24 flex-1">"Dominion's patented oil recovery units helped us capture residual oil we were previously losing. The ROI was visible within the first quarter."</p>
+                <div>
+                  <p class="testi-name font-outfit text-15 font-bold">Michael Thompson</p>
+                  <p class="testi-role font-inter text-[11.5px] mt-3 font-medium">Operations Director, Permian Basin</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testi-card rounded-[3px] p-32 max-768:p-24 border h-full flex flex-col">
+                <div class="flex gap-2 mb-16 testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="testi-text font-inter text-15 max-768:text-14 leading-[1.72] mb-24 flex-1">"Their ChainBreaker microbial treatment dramatically reduced our paraffin buildup. Production efficiency improved by over 18% in two months."</p>
+                <div>
+                  <p class="testi-name font-outfit text-15 font-bold">Sarah Mitchell</p>
+                  <p class="testi-role font-inter text-[11.5px] mt-3 font-medium">Infrastructure Manager, Eagle Ford</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testi-card rounded-[3px] p-32 max-768:p-24 border h-full flex flex-col">
+                <div class="flex gap-2 mb-16 testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="testi-text font-inter text-15 max-768:text-14 leading-[1.72] mb-24 flex-1">"SAFDEPAR solved our paraffin control problem completely — non-hazardous, easy to apply, and it actually works. We've rolled it out across six sites."</p>
+                <div>
+                  <p class="testi-name font-outfit text-15 font-bold">James Richardson</p>
+                  <p class="testi-role font-inter text-[11.5px] mt-3 font-medium">Project Manager, Haynesville</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testi-card rounded-[3px] p-32 max-768:p-24 border h-full flex flex-col">
+                <div class="flex gap-2 mb-16 testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="testi-text font-inter text-15 max-768:text-14 leading-[1.72] mb-24 flex-1">"The hydrocarbon locating survey gave us precision we hadn't seen before. Dominion's team was professional and the data was actionable immediately."</p>
+                <div>
+                  <p class="testi-name font-outfit text-15 font-bold">Linda Castillo</p>
+                  <p class="testi-role font-inter text-[11.5px] mt-3 font-medium">Exploration Lead, Anadarko Basin</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testi-card rounded-[3px] p-32 max-768:p-24 border h-full flex flex-col">
+                <div class="flex gap-2 mb-16 testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="testi-text font-inter text-15 max-768:text-14 leading-[1.72] mb-24 flex-1">"H₂S Scavenger kept our team safe and compliant at a high-sulfur site. Dominion provided fast delivery and solid technical support throughout."</p>
+                <div>
+                  <p class="testi-name font-outfit text-15 font-bold">Robert Haines</p>
+                  <p class="testi-role font-inter text-[11.5px] mt-3 font-medium">Safety Manager, Midland TX</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testi-card rounded-[3px] p-32 max-768:p-24 border h-full flex flex-col">
+                <div class="flex gap-2 mb-16 testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="testi-text font-inter text-15 max-768:text-14 leading-[1.72] mb-24 flex-1">"We've worked with Dominion for three years. Their wastewater solutions cut our disposal costs by 30% and the BIO2 treatment exceeded every benchmark."</p>
+                <div>
+                  <p class="testi-name font-outfit text-15 font-bold">Carol Nguyen</p>
+                  <p class="testi-role font-inter text-[11.5px] mt-3 font-medium">VP Operations, Houston TX</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════
+           CONTACT / GET IN TOUCH
+      ═══════════════════════════════════ -->
+      <section class="bg-black py-96 max-768:py-60 relative overflow-hidden" id="contact" aria-label="Get in touch with Dominion Energy Services">
+        <div aria-hidden="true" class="absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] [background-size:64px_64px] pointer-events-none"></div>
+        <img src="/assets/images/contact-bg-pattern.png" alt="" width="1200" height="1762" loading="lazy" aria-hidden="true" class="absolute right-0 top-0 h-full w-auto opacity-[0.03] pointer-events-none" />
+
+        <div class="max-w-[1440px] mx-auto px-32 max-768:px-24 max-425:px-16 grid grid-cols-2 max-768:grid-cols-1 gap-64 max-1300:gap-40 max-768:gap-40 items-start relative z-[1]">
+
+          <div>
+            <div class="flex items-center gap-10 mb-18">
+              <span class="w-28 h-[2px] bg-crimson inline-block"></span>
+              <span class="font-inter text-[10.5px] font-semibold tracking-[0.2em] uppercase text-crimson">Get In Touch</span>
+            </div>
+            <h2 class="font-outfit text-[clamp(26px,3.5vw,52px)] font-extrabold text-white leading-[1.05] mb-22 tracking-[-0.02em]">
+              Get in touch to discuss your needs
+            </h2>
+            <p class="font-inter text-15 max-768:text-14 leading-[1.72] text-white/42 mb-36 max-768:mb-24 max-w-[420px] max-768:max-w-none">
+              We look forward to partnering with you and delivering excellence in the oil industry. Our team is always ready to assist.
+            </p>
+            <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services at 713-899-2861" class="inline-block font-outfit text-[clamp(26px,3.5vw,48px)] font-extrabold text-crimson no-underline tracking-[-0.015em] mb-40 max-768:mb-28 transition-colors duration-[180ms] hover:text-royal-blue">
+              713-899-2861
+            </a>
+            <div class="flex items-center gap-20 max-768:gap-14 flex-wrap">
+              <a href="#" role="link" target="_blank" aria-label="Follow Dominion Energy Services on Instagram" class="w-38 h-38 border border-white/12 rounded-[3px] flex items-center justify-center transition-all duration-[180ms] hover:border-crimson hover:bg-crimson/10">
+                <img src="/assets/images/instagram-icon-black.svg" alt="" width="16" height="16" loading="lazy" aria-hidden="true" class="brightness-0 invert opacity-[0.55]" />
+              </a>
+              <a href="#" role="link" target="_blank" aria-label="Get last updates from Dominion Energy Services on Facebook" class="w-38 h-38 border border-white/12 rounded-[3px] flex items-center justify-center transition-all duration-[180ms] hover:border-crimson hover:bg-crimson/10">
+                <img src="/assets/images/facebook-black-icon.svg" alt="" width="16" height="16" loading="lazy" aria-hidden="true" class="brightness-0 invert opacity-[0.55]" />
+              </a>
+              <div class="w-px h-22 bg-white/8"></div>
+              <div class="flex items-center gap-10">
+                <span class="font-inter text-12 text-white/36">Mon - Fri</span>
+                <div class="w-20 h-px bg-white/15"></div>
+                <span class="font-inter text-12 text-white/36">9AM - 5PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-brand-navy border border-white/7 rounded-4 p-40 max-768:p-24 [border-top:3px_solid_var(--color-crimson)]">
+            <h3 class="font-outfit text-[20px] font-bold text-white mb-28">Contact Information</h3>
+            <div class="flex flex-col gap-20 mb-32">
+              <div class="flex gap-14 items-start">
+                <div class="w-36 h-36 bg-white/14 rounded-[3px] flex items-center justify-center shrink-0">
+                  <img src="/assets/images/call-icon.svg" alt="" width="15" height="15" loading="lazy" aria-hidden="true" class="brightness-0 invert" />
+                </div>
+                <div>
+                  <p class="font-inter text-[10px] text-white/28 uppercase tracking-[0.12em] mb-4">Phone</p>
+                  <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services" class="font-inter text-[14.5px] text-white no-underline font-medium">713.899.2861</a>
+                </div>
+              </div>
+              <div class="flex gap-14 items-start">
+                <div class="w-36 h-36 bg-white/14 rounded-[3px] flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+                </div>
+                <div>
+                  <p class="font-inter text-[10px] text-white/28 uppercase tracking-[0.12em] mb-4">Email</p>
+                  <a href="mailto:info@dominionenergyservices.net" role="link" target="_self" aria-label="Email Dominion Energy Services" class="font-inter text-[14.5px] max-768:text-[13px] text-white no-underline font-medium">info@dominionenergyservices.net</a>
+                </div>
+              </div>
+              <div class="flex gap-14 items-start">
+                <div class="w-36 h-36 bg-white/14 rounded-[3px] flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p class="font-inter text-[10px] text-white/28 uppercase tracking-[0.12em] mb-4">Address</p>
+                  <p class="font-inter text-[14.5px] text-white font-medium">P.O. Box 353, Barker, TX 77413</p>
+                </div>
+              </div>
+            </div>
+            <a href="mailto:info@dominionenergyservices.net" role="link" target="_self" aria-label="Send us a message" class="inline-flex items-center justify-center px-32 h-44 bg-crimson font-inter text-[11.5px] font-semibold text-white no-underline tracking-[0.1em] uppercase rounded-[2px] transition-colors duration-[180ms] hover:bg-[#b8202e]">
+              Send Us a Message
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════ -->
+    <footer class="bg-black border-t border-white/5">
+      <div class="h-[260px] max-768:h-[200px] overflow-hidden">
+        <!-- eslint-disable @html-eslint/use-baseline -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1997.9926926654232!2d-95.70013420109917!3d29.78335891437319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640d91f0c7710b1%3A0x19385277950ee9b5!2sBarker%2C%20TX%2077413%2C%20USA!5e1!3m2!1sen!2sin!4v1780898347263!5m2!1sen!2sin"
+          class="w-full h-full border-0 brightness-[0.85]"
+          title="Dominion Energy Services location — Barker, TX 77413"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          width="1440"
+          height="260"
+        ></iframe>
+        <!-- eslint-enable @html-eslint/use-baseline -->
+      </div>
+      <div class="py-28 max-768:py-20">
+        <div class="max-w-[1440px] mx-auto px-32 max-768:px-24 max-425:px-16 flex items-center max-768:flex-col max-768:items-start justify-between gap-24 max-768:gap-16 flex-wrap">
+          <a href="/pages/index.html" role="link" target="_self" aria-label="Dominion Energy Services — Home" class="flex items-center gap-12 no-underline shrink-0">
+            <div class="bg-brand-navy w-38 h-38 flex items-center justify-center rounded-[2px] shrink-0">
+              <img src="/assets/images/logo-full.png" alt="" width="22" height="22" loading="lazy" aria-hidden="true" class="object-contain brightness-0 invert w-20 h-20" />
+            </div>
+            <div>
+              <p class="font-outfit text-12 font-bold text-white tracking-[0.04em]">DOMINION ENERGY SERVICES</p>
+              <p class="font-inter text-[10.5px] text-white/28 mt-2">P.O. Box 353 Barker, TX 77413</p>
+            </div>
+          </a>
+          <div class="flex items-center gap-20 max-768:gap-14 flex-wrap">
+            <span class="font-inter text-[11.5px] text-white/25">fax: 281.206.7963</span>
+            <span class="w-px h-12 bg-white/8"></span>
+            <a href="tel:7138992861" role="link" target="_self" aria-label="Call Dominion Energy Services" class="font-inter text-[11.5px] text-white/35 no-underline transition-colors duration-[180ms] hover:text-white/70">713.899.2861</a>
+            <span class="w-px h-12 bg-white/8 max-425:hidden"></span>
+            <a href="mailto:info@dominionenergyservices.net" role="link" target="_self" aria-label="Email Dominion Energy Services" class="font-inter text-[11.5px] text-white/35 no-underline transition-colors duration-[180ms] hover:text-white/70 max-425:hidden">info@dominionenergyservices.net</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Ticker pause on hover
+      const ticker = document.querySelector('.ticker');
+      if (ticker) {
+        ticker.parentElement.addEventListener('mouseenter', () => ticker.style.animationPlayState = 'paused');
+        ticker.parentElement.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
+      }
+
+      // Mobile menu toggle (slide-down drawer — different from index.html fullscreen overlay)
+      const hamburger = document.getElementById('copy-hamburger');
+      const mobileMenu = document.getElementById('copy-mobile-menu');
+
+      function openMenu() {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.paddingRight = scrollbarWidth + 'px';
+        document.body.style.overflow = 'hidden';
+        mobileMenu.classList.add('is-open');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+          if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+            closeMenu();
+          }
+        });
+
+        // Close on nav link click (non-toggle links only)
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // About Us submenu toggle
+      const aboutToggle = document.getElementById('copy-about-toggle');
+      const aboutSubmenu = document.getElementById('copy-about-submenu');
+      const aboutChevron = document.getElementById('copy-about-chevron');
+
+      if (aboutToggle && aboutSubmenu) {
+        aboutToggle.addEventListener('click', () => {
+          const isOpen = aboutToggle.getAttribute('aria-expanded') === 'true';
+          if (isOpen) {
+            aboutSubmenu.style.maxHeight = '0';
+            aboutChevron.style.transform = 'rotate(0deg)';
+            aboutToggle.setAttribute('aria-expanded', 'false');
+          } else {
+            aboutSubmenu.style.maxHeight = aboutSubmenu.scrollHeight + 'px';
+            aboutChevron.style.transform = 'rotate(90deg)';
+            aboutToggle.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
+    </script>
+    <!-- CDN globals — deferred so they don't block parse/render.
+         Defer preserves document order: Swiper→Lenis→GSAP→ST→app.js (module).
+         DOMContentLoaded fires only after all deferred + module scripts finish. -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <!-- Swiper init — DOMContentLoaded ensures Swiper CDN has executed first -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('#testimonials-swiper', {
+          slidesPerView: 1.15,
+          spaceBetween: 20,
+          loop: true,
+          grabCursor: true,
+          centeredSlides: true,
+          speed: 1500,
+          navigation: {
+            nextEl: '#testi-next',
+            prevEl: '#testi-prev',
+          },
+          breakpoints: {
+            768: { slidesPerView: 1.5, spaceBetween: 24 },
+            1300: { slidesPerView: 2.4, spaceBetween: 28 },
+          },
+        });
+      });
+    </script>
+
+  </body>
+</html>

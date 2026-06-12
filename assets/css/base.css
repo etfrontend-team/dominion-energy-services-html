@@ -1,0 +1,182 @@
+html {
+  @apply scroll-smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  @apply font-inter text-text overflow-x-hidden bg-white antialiased;
+}
+
+@utility text-* {
+  font-size: calc(--value(integer) * 1px);
+}
+
+@utility rounded-* {
+  border-radius: calc(--value(integer) * 1px);
+}
+
+/* ── Headings ── */
+h1,
+.h1 {
+  @apply text-heading-1 max-1199:text-heading-2 max-768:text-heading-3 max-425:text-heading-4 leading-tight font-bold;
+}
+
+h2,
+.h2 {
+  @apply text-heading-2 max-1199:text-heading-3 max-768:text-heading-4 max-425:text-heading-5 leading-tight font-bold;
+}
+
+h3,
+.h3 {
+  @apply text-heading-3 max-1199:text-heading-4 max-768:text-heading-5 max-425:text-18 leading-tight font-semibold;
+}
+
+h4,
+.h4 {
+  @apply text-heading-4 max-768:text-heading-5 max-425:text-18 leading-snug font-semibold;
+}
+
+h5,
+.h5 {
+  @apply text-heading-5 max-768:text-18 leading-snug font-semibold;
+}
+
+h6,
+.h6 {
+  @apply text-heading-6 max-768:text-16 leading-normal font-medium;
+}
+
+/* ── Paragraphs ── */
+.content p {
+  @apply text-16 leading-relaxed;
+}
+
+.content p + p {
+  @apply mt-16;
+}
+
+/* ── Title Color Wrappers ── */
+.title-white h1,
+.title-white h2,
+.title-white h3,
+.title-white h4,
+.title-white h5,
+.title-white h6 {
+  @apply text-white;
+}
+
+.title-navy-dark h1,
+.title-navy-dark h2,
+.title-navy-dark h3,
+.title-navy-dark h4,
+.title-navy-dark h5,
+.title-navy-dark h6 {
+  @apply text-navy-dark;
+}
+
+.title-text h1,
+.title-text h2,
+.title-text h3,
+.title-text h4,
+.title-text h5,
+.title-text h6 {
+  @apply text-text;
+}
+
+.title-orange h1,
+.title-orange h2,
+.title-orange h3,
+.title-orange h4,
+.title-orange h5,
+.title-orange h6 {
+  @apply text-orange;
+}
+
+.title-amber h1,
+.title-amber h2,
+.title-amber h3,
+.title-amber h4,
+.title-amber h5,
+.title-amber h6 {
+  @apply text-amber;
+}
+
+.title-brand-navy h1,
+.title-brand-navy h2,
+.title-brand-navy h3,
+.title-brand-navy h4,
+.title-brand-navy h5,
+.title-brand-navy h6 {
+  @apply text-brand-navy;
+}
+
+.title-royal-blue h1,
+.title-royal-blue h2,
+.title-royal-blue h3,
+.title-royal-blue h4,
+.title-royal-blue h5,
+.title-royal-blue h6 {
+  @apply text-royal-blue;
+}
+
+.title-crimson h1,
+.title-crimson h2,
+.title-crimson h3,
+.title-crimson h4,
+.title-crimson h5,
+.title-crimson h6 {
+  @apply text-crimson;
+}
+
+/* ── Content Color Wrappers ── */
+.content-white p {
+  @apply text-white;
+}
+
+.content-off-white p {
+  @apply text-off-white;
+}
+
+.content-gray-light p {
+  @apply text-gray-light;
+}
+
+.content-gray-text p {
+  @apply text-gray-text;
+}
+
+.content-text p {
+  @apply text-text;
+}
+
+.content-navy-dark p {
+  @apply text-navy-dark;
+}
+
+.content-orange p {
+  @apply text-orange;
+}
+
+.content-brand-navy p {
+  @apply text-brand-navy;
+}
+
+.content-royal-blue p {
+  @apply text-royal-blue;
+}
+
+.content-crimson p {
+  @apply text-crimson;
+}
+
+.content-snow p {
+  @apply text-snow;
+}
+
+.general-padding {
+  @apply max-1199:py-80 max-768:py-50 py-120;
+}

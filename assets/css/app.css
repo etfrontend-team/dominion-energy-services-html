@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+@import './base.css';
+@import './component.css';
+@import './layout.css';
+@import './utilities.css';
+
+@theme {
+  /* ── Breakpoints ── */
+  --breakpoint-1920: 1921px;
+  --breakpoint-1600: 1601px;
+  --breakpoint-1512: 1513px;
+  --breakpoint-1441: 1441px;
+  --breakpoint-1440: 1440px;
+  --breakpoint-1366: 1367px;
+  --breakpoint-1300: 1301px;
+  --breakpoint-1199: 1200px;
+  --breakpoint-1024: 1025px;
+  --breakpoint-992: 993px;
+  --breakpoint-768: 768px;
+  --breakpoint-640: 641px;
+  --breakpoint-576: 577px;
+  --breakpoint-425: 426px;
+  --breakpoint-375: 376px;
+
+  /* ── Spacing base unit ── */
+  --spacing: 1px;
+
+  /* ── Font Families ── */
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  /* ── Colors ── */
+  --color-navy-dark: #060f20;
+  --color-navy: #0b1f3a;
+  --color-navy-mid: #163260;
+  --color-orange: #d4622a;
+  --color-orange-light: #e8784a;
+  --color-amber: #f5a623;
+  --color-white: #ffffff;
+  --color-off-white: #f8fafc;
+  --color-surface: #eef2f8;
+  --color-gray-light: #e2e8f0;
+  --color-gray: #cbd5e1;
+  --color-gray-text: #64748b;
+  --color-text: #1e293b;
+  --color-dark: #04090f;
+
+  /* ── Ink / Dark text (banner) ── */
+  --color-ink: #0c0c0c;
+  --color-dark-gray: #3c3c3c;
+
+  /* ── Brand Palette (Figma) ── */
+  /* #384892 · Bright Navy   — primary brand indigo-navy */
+  --color-brand-navy: #384892;
+  /* #1f5ea8 · Royal Blue    — secondary action blue */
+  --color-royal-blue: #1f5ea8;
+  /* #d72638 · Crimson Red   — accent / alert red */
+  --color-crimson: #d72638;
+  /* #f7f9fc · Snow White    — near-white section background */
+  --color-snow: #f7f9fc;
+  /* #ffffff · Pure White    — alias → see --color-white above */
+  /* #000000 · Pure Black */
+  --color-black: #000000;
+
+  /* ── Border Radius ── */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+
+  /* ── Border Radius (extras) ── */
+  --radius-14: 14px;
+
+  /* ── Font Sizes ── */
+  --text-heading-1: 68px;
+  --text-heading-2: 52px;
+  --text-heading-3: 42px;
+  --text-heading-4: 32px;
+  --text-heading-5: 24px;
+  --text-heading-6: 20px;
+  --text-18: 18px;
+  --text-16: 16px;
+  --text-15: 15px;
+  --text-14: 14px;
+  --text-13: 13px;
+  --text-12: 12px;
+  --text-11: 11px;
+}

@@ -1,0 +1,8 @@
+[build]
+  command = "npx tailwindcss -i ./assets/css/style.css -o ./dist/style.css"
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/pages/index.html"
+  status = 200
